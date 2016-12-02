@@ -1,0 +1,42 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "A static site made with Metalsmith",
+  "main": "_bin/index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/saschazar21/static-site.git"
+  },
+  "keywords": [
+    "html",
+    "metalsmith",
+    "static",
+    "site",
+    "website",
+    "webroot",
+    "markdown"
+  ],
+  "author": "Sascha Zarhuber",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/saschazar21/static-site#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
+    "gulp": "^3.9.1",
+    "highlighter": "^0.1.0",
+    "js-yaml": "^3.7.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-date-in-filename": "^0.0.14",
+    "metalsmith-layouts": "^1.7.0",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.5.0"
+  }
+}

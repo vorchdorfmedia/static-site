@@ -1,0 +1,34 @@
+global:
+  source: '_src'
+  destination: '_dist'
+
+meta:
+  baseurl: 'http://localhost:3000/'
+  sitename: 'Thesis Blog'
+  description: 'A blog featuring the progress of my Master thesis project.'
+  author: 'Sascha Zarhuber'
+  generatorname: 'ContentCrane powered by Metalsmith'
+
+collections:
+  blog: posts/*.md
+  repos: repos/*.md
+
+permalinks:
+  relative: false
+  pattern: ':title'
+  date: 'YYYY-MM-DD'
+  linksets:
+    - match:
+        collection: blog
+      pattern: blog/:date/:title
+    - match:
+        collection: repos
+      pattern: repos/:hash
+
+layouts:
+  engine: 'handlebars'
+  default: 'default.hbs'
+  directory: '_layouts'
+  rename: true
+  partials: '_includes'
+  pattern: '**/*.hbs'
