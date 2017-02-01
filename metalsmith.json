@@ -1,0 +1,58 @@
+{
+  "source": "_src",
+  "destination": "_dist",
+  "plugins": {
+    "metalsmith-date-in-filename": {
+      "override": true
+    },
+    "metalsmith-metadata-directory": {
+      "directory": "_data/*.json"
+    },
+    "metalsmith-drafts": true,
+    "metalsmith-markdown": true,
+    "metalsmith-excerpts": true,
+    "metalsmith-permalinks": {
+      "relative": false,
+      "pattern": ":title",
+      "date": "YYYY/MM/DD",
+      "linksets": [{
+        "match": {
+          "collection": "blog"
+        },
+        "pattern": "blog/:date/:title"
+      }, {
+        "match": {
+          "collection": "projects"
+        },
+        "pattern": "project/:title"
+      }]
+    },
+    "metalsmith-collections": {
+      "blog": {
+        "pattern": "./posts/**/*.md",
+        "refer": false,
+        "sortBy": "date",
+        "reverse": true
+      }
+    },
+    "metalsmith-pagination": {
+      "collections.blog": {
+        "perPage": 5,
+        "layout": "page.hbs",
+        "first": "index.html",
+        "path": "page/:num/index.html",
+        "filter": "draft !== true",
+        "pageMetadata": {
+          "title": "Archive"
+        }
+      }
+    },
+    "metalsmith-layouts": {
+      "engine": "handlebars",
+      "directory": "_layouts",
+      "partials": "_includes",
+      "default": "default.hbs",
+      "rename": true
+    }
+  }
+}
