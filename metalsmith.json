@@ -13,7 +13,9 @@
     "metalsmith-excerpts": true,
     "metalsmith-sass": {
       "outputStyle": "compressed",
-      "outputDir": "assets/css/"
+      "outputDir": "assets/css/",
+      "sourceMap": true,
+      "sourceMapContents": true
     },
     "metalsmith-permalinks": {
       "relative": false,
