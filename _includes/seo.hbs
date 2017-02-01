@@ -1,0 +1,9 @@
+{{#if site.title}}
+  <title>{{site.title}}</title>
+{{/if}}
+{{#if site.url}}
+  <base href="{{site.url}}">
+{{/if}}
+{{#each site.seo}}
+  <meta name="{{@key}}" content="{{this}}">
+{{/each}}

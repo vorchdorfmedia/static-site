@@ -1,4 +1,9 @@
 {
-  "url": "http://localhost:3000",
-  "title": "A Metalsmith Test Site"
+  "url": "http://localhost:3000/",
+  "title": "A Metalsmith Test Site",
+  "seo": {
+    "author": "Sascha Zarhuber",
+    "description": "Private blog of Sascha Zarhuber",
+    "keywords": "sascha, zarhuber, webdev, webdevelopment, personal blog, linz, vorchdorf, media, webdesign"
+  }
 }

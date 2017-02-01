@@ -11,6 +11,10 @@
     "metalsmith-drafts": true,
     "metalsmith-markdown": true,
     "metalsmith-excerpts": true,
+    "metalsmith-sass": {
+      "outputStyle": "compressed",
+      "outputDir": "assets/css/"
+    },
     "metalsmith-permalinks": {
       "relative": false,
       "pattern": ":title",
@@ -52,6 +56,7 @@
       "directory": "_layouts",
       "partials": "_includes",
       "default": "default.hbs",
+      "pattern": ["**/*.hbs", "**/*.html", "**/*.md"],
       "rename": true
     }
   }
