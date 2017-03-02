@@ -1,0 +1,12 @@
+{{> header}}
+{{#if blog}}
+  <h1 id="blog-posts">Blog posts</h1>
+  <ul class="list--blank">
+  {{#each blog}}
+    <li>
+      <a href="/{{path}}">{{title}}</a>
+    </li>
+  {{/each}}
+  </ul>
+{{/if}}
+{{> footer}}
