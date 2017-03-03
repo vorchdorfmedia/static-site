@@ -9,6 +9,24 @@ meta:
   author: 'Sascha Zarhuber'
   generatorname: 'ContentCrane powered by Metalsmith'
 
+date-in-filename:
+  override: true
+
+metadata-directory:
+  directory: _data/*.json
+
+drafts: true
+
+markdown: true
+
+excerpts: true
+
+sass:
+  outputStyle: compressed
+  outputDir: assets/css
+  sourceMap: true
+  sourceMapContents: true
+
 collections:
   blog: posts/*.md
   repos: repos/*.md
@@ -26,9 +44,12 @@ permalinks:
       pattern: repos/:hash
 
 layouts:
-  engine: 'handlebars'
-  default: 'default.hbs'
-  directory: '_layouts'
+  engine: handlebars
+  directory: _layouts
+  partials: _includes
+  default: default.hbs
+  pattern:
+    - "**/*.hbs"
+    - "**/*.html"
+    - "**/*.md"
   rename: true
-  partials: '_includes'
-  pattern: '**/*.hbs'

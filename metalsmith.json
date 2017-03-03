@@ -42,7 +42,7 @@
       }
     },
     "metalsmith-pagination": {
-      "collections.blog": {
+      "collection.blog": {
         "perPage": 5,
         "layout": "page.hbs",
         "first": "index.html",
