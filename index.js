@@ -65,7 +65,7 @@ const init = () => new Promise((resolve, reject) => {
 .then(loadDeps)
 .then((modules) => {
   const metal = metalsmith('./')
-  .metadata(config.meta)
+  .metadata(config.metadata)
   .source(config.global.source)
   .destination(config.global.destination);
 

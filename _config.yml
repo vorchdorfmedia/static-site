@@ -2,7 +2,7 @@ global:
   source: '_src'
   destination: '_dist'
 
-meta:
+metadata:
   baseurl: 'http://localhost:3000/'
   sitename: 'Thesis Blog'
   description: 'A blog featuring the progress of my Master thesis project.'
