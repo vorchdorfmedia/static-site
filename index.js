@@ -27,7 +27,7 @@ const loadDeps = obj => new Promise((resolve, reject) => {
   if (obj !== null && typeof obj === 'object') {
     const module = {};
     Object.keys(obj).forEach((entry) => {
-      if (entry === 'global' || entry === 'metadata') {
+      if (entry === 'global' || entry === 'ignore' || entry === 'exclude') {
         return;
       }
 
@@ -65,9 +65,19 @@ const init = () => new Promise((resolve, reject) => {
 .then(loadDeps)
 .then((modules) => {
   const metal = metalsmith('./')
-  .metadata(config.metadata)
+  .metadata(config.global.metadata)
   .source(config.global.source)
   .destination(config.global.destination);
+
+  if (config.ignore || config.exclude) {
+    let ignoreList = [];
+    if (Array.isArray(config.ignore)) {
+      ignoreList = config.ignore;
+    } else if (Array.isArray(config.exclude)) {
+      ignoreList = config.exclude;
+    }
+    metal.ignore(ignoreList);
+  }
 
   const result = setup(metal, modules);
   return result;

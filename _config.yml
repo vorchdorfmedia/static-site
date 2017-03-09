@@ -1,13 +1,14 @@
 global:
   source: '_src'
   destination: '_dist'
+  metadata:
+    baseurl: 'http://localhost:3000/'
+    sitename: 'Thesis Blog'
+    description: 'A blog featuring the progress of my Master thesis project.'
+    author: 'Sascha Zarhuber'
+    generatorname: 'ContentCrane powered by Metalsmith'
 
-metadata:
-  baseurl: 'http://localhost:3000/'
-  sitename: 'Thesis Blog'
-  description: 'A blog featuring the progress of my Master thesis project.'
-  author: 'Sascha Zarhuber'
-  generatorname: 'ContentCrane powered by Metalsmith'
+exclude:
 
 date-in-filename:
   override: true
