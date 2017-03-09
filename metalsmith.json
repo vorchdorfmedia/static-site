@@ -11,6 +11,10 @@
     "metalsmith-drafts": true,
     "metalsmith-markdown": true,
     "metalsmith-excerpts": true,
+    "metalsmith-assets": {
+      "soure": "./_public",
+      "destination": "_dist/assets"
+    },
     "metalsmith-sass": {
       "outputStyle": "compressed",
       "outputDir": "assets/css/",

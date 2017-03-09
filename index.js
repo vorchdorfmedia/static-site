@@ -27,7 +27,7 @@ const loadDeps = obj => new Promise((resolve, reject) => {
   if (obj !== null && typeof obj === 'object') {
     const module = {};
     Object.keys(obj).forEach((entry) => {
-      if (entry === 'global' || entry === 'meta') {
+      if (entry === 'global' || entry === 'metadata') {
         return;
       }
 

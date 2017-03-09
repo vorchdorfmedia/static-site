@@ -21,6 +21,10 @@ markdown: true
 
 excerpts: true
 
+assets:
+  source: ./_public
+  destination: ./assets
+
 sass:
   outputStyle: compressed
   outputDir: assets/css
@@ -34,7 +38,7 @@ collections:
 permalinks:
   relative: false
   pattern: ':title'
-  date: 'YYYY-MM-DD'
+  date: 'YYYY/MM/DD'
   linksets:
     - match:
         collection: blog

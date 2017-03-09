@@ -1,3 +1,17 @@
 {{> header}}
-{{{contents}}}
+{{> nav}}
+<div class="supertron{{#if cover}} image--container{{/if}}">
+  <div class="container">
+    <h1>{{title}}</h1>
+    {{#if excerpt}}{{{excerpt}}}{{/if}}
+    {{#if cover}}<img src="{{cover}}" alt="Cover image for {{title}}" class="block__bg">{{/if}}
+  </div>
+</div>
+<article>
+  <div class="section">
+    <div class="container">
+      {{{contents}}}
+    </div>
+  </div>
+</article>
 {{> footer}}

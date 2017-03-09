@@ -32,6 +32,7 @@
     "highlighter": "^0.1.0",
     "js-yaml": "^3.8.2",
     "metalsmith": "^2.3.0",
+    "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-date-in-filename": "^0.0.14",
     "metalsmith-drafts": "^0.0.1",
