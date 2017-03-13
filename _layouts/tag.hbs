@@ -1,0 +1,26 @@
+{{> header}}
+{{> nav}}
+<div class="container">
+  <div class="jumbotron">
+    <h1>#{{tag}}</h1>
+    <p>Found {{pagination.files.length}} posts containing <strong>{{tag}}</strong></p>
+  </div>
+  {{#if pagination.files.length}}
+  <div class="row">
+    {{#each pagination.files}}
+    <div class="col-sm-6 col-lg-4">
+      <h3>{{title}}</h3>
+      {{{excerpt}}}
+      <ul class="list-inline">
+        {{#each tags}}
+        <li><a href="/tags/{{slug}}">{{slug}}</a></li>
+        {{/each}}
+      </ul>
+      <a class="btn btn-default" role="button" href="/{{path}}">Read more</a>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+{{> footer}}

@@ -2,9 +2,12 @@
 {{> nav}}
 <div class="container">
   <div class="jumbotron">
-    <h1>{{title}}</h1>
+    <h1>{{sitename}}</h1>
     {{#if excerpt}}{{{excerpt}}}{{/if}}
   </div>
+  {{#if contents}}
+  <article>{{{contents}}}</article>
+  {{/if}}
   {{#if blog}}
   <div class="section">
     <div class="container">

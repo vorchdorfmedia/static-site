@@ -1,12 +1,12 @@
   <div class="footer">
     <div class="container">
       <div class="row">
-        {{#if tags}}
+        {{#if tags.length}}
         <div class="col-sm-6">
           <h3>{{title}} <small>- Tags</small></h3>
           <ul class="list-inline">
           {{#each tags}}
-            <li><a class="btn btn-info" role="button" href="/tags/{{this}}">#{{this}}</a></li>
+            <li><a class="btn btn-info" role="button" href="/tags/{{slug}}">#{{name}}</a></li>
           {{/each}}
           </ul>
         </div>

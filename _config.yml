@@ -48,6 +48,16 @@ permalinks:
         collection: repos
       pattern: repos/:hash
 
+tags:
+  handle: tags
+  path: tags/:tag/index.html
+  layout: ../_layouts/tag.hbs
+  sortBy: date
+  skipMetadata: false
+  slug:
+    mode: rfc3986
+    lower: true
+
 layouts:
   engine: handlebars
   directory: _layouts
