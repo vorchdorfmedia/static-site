@@ -1,15 +1,17 @@
   <div class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-tl-50">
+        {{#if tags}}
+        <div class="col-sm-6">
           <h3>{{title}} <small>- Tags</small></h3>
-          <div>
+          <ul class="list-inline">
           {{#each tags}}
-            <a class="button button--small button--bg button--inverted" href="/tags/{{this}}">{{this}}</a>
+            <li><a class="btn btn-info" role="button" href="/tags/{{this}}">#{{this}}</a></li>
           {{/each}}
-          </div>
+          </ul>
         </div>
-        <div class="col-tl-50">
+        {{/if}}
+        <div class="col-sm-6">
           <h3>{{sitename}}</h3>
           <strong>{{description}}</strong><br/>
           <span>{{author}} - {{generatorname}}</span>

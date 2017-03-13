@@ -1,27 +1,26 @@
 {{> header}}
 {{> nav}}
-<div class="supertron{{#if cover}} image--container{{/if}}">
-  <div class="container">
+<div class="container">
+  <div class="jumbotron">
     <h1>{{title}}</h1>
     {{#if excerpt}}{{{excerpt}}}{{/if}}
-    {{#if cover}}<img src="{{cover}}" alt="Cover image for {{title}}" class="block__bg">{{/if}}
   </div>
-</div>
-{{#if blog}}
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-tl-50">
-        <h1 id="blog-posts">Blog posts</h1>
-        <ul class="list--blank">
-          {{#each blog}}
-          <li>
-            <a href="/{{path}}">{{title}}</a>
-          </li>
-          {{/each}}
-        </ul>
+  {{#if blog}}
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-tl-50">
+          <h1 id="blog-posts">Blog posts</h1>
+          <ul class="list--blank">
+            {{#each blog}}
+            <li>
+              <a href="/{{path}}">{{title}}</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-{{/if}}
+  {{/if}}
+</div>
 {{> footer}}
