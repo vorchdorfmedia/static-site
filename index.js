@@ -1,7 +1,14 @@
 const metalsmith = require('metalsmith');
 const fs = require('fs');
+const path = require('path');
+const TarGz = require('tar.gz');
 const yaml = require('js-yaml');
 
+const tar = new TarGz({}, {
+  level: 9,
+  memLevel: 9,
+  fromBase: true,
+});
 let config = {};
 let iterator = 0;
 
@@ -82,15 +89,15 @@ const init = () => new Promise((resolve, reject) => {
   const result = setup(metal, modules);
   return result;
 })
-.then(metal => {
-  console.log(metal);
-  return metal.build((err) => {
-    if (err) {
-      return Promise.reject(err.message || err);
-    }
-    console.log('Build complete');
-  });
-})
+.then(metal => new Promise((resolve, reject) => metal.build((err) => {
+  if (err) {
+    return reject(err.message || err);
+  }
+  console.log('Build complete');
+  return resolve(path.resolve(__dirname, config.global.destination));
+})))
+.then(cwd => tar.compress(cwd, path.resolve(__dirname, 'webroot.tar.gz')))
+.then(() => console.log('Successfully created webroot.tar.gz'))
 .catch((e) => {
   console.error(`Error:\n=========\n\n${e.message || e}`);
 });

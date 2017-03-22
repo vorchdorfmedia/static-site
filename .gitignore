@@ -1,3 +1,7 @@
+# tarballs/archives
+*.tar.*
+*.zip
+
 # Distribution folder
 _dist
 
