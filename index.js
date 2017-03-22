@@ -4,9 +4,10 @@ const path = require('path');
 const TarGz = require('tar.gz');
 const yaml = require('js-yaml');
 
-const tar = new TarGz({}, {
+const tar = new TarGz({
   level: 9,
   memLevel: 9,
+}, {
   fromBase: true,
 });
 let config = {};
